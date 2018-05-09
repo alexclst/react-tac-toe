@@ -5,7 +5,7 @@ import './index.css';
 function Square(props) {
 	var classes = props.winningSquare ? 'winning square' : 'square';
 	return (
-		<button class={classes} onClick={props.onClick}>
+		<button className={classes} onClick={props.onClick}>
 			{props.value}
 		</button>
 	);
@@ -141,7 +141,7 @@ function calculateWinner(squares) {
 	for (let i = 0; i < lines.length; i++) {
 		const [a, b, c] = lines[i];
 		if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-			return [squares[a], squares[b], squares[c]];
+			return [a, b, c];
 		}
 	}
 	return [];
